@@ -17,7 +17,7 @@ Este é um aplicativo de clima desenvolvido para dispositivos Android. Ele permi
 -   **Compartilhamento:** Os usuários têm a opção de compartilhar as informações do clima com outras pessoas. Isso pode ser útil ao planejar atividades ao ar livre, compartilhar previsões com amigos ou enviar detalhes do clima para familiares que estejam viajando.
    
 ## Baixe o apk aqui:
-"[Download](https://www.behance.net/gallery/149813621/Thunder-forecast-app)"(23,82MB)
+"[Download](https://raw.githubusercontent.com/kleber0a0m/ClimaCertoAndroid/master/clima-certo.apk)"(23,82MB)
 
 ![QRCode_Fácil](https://github.com/kleber0a0m/ClimaCertoAndroid/assets/70644405/fbda0072-8b23-4c57-b5c1-85dbd429cd3a)
 
