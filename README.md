@@ -10,12 +10,17 @@ Este é um aplicativo de clima desenvolvido para dispositivos Android. Ele permi
 
 -   **Pesquisa de Cidades:** Os usuários podem pesquisar por cidades específicas para obter informações detalhadas sobre o clima atual e previsões futuras. Basta digitar o nome da cidade desejada na barra de pesquisa e o aplicativo fornecerá os resultados correspondentes.
     
--   **Utilização da Localização:** Além da pesquisa manual, o aplicativo também pode utilizar a localização atual do usuário para fornecer informações meteorológicas precisas da região atual. É necessário realizar a liberação da permissão de acesso a localização manualmente, uma vez que o aplicativo não solicita ao usuário.
+-   **Utilização da Localização:** Além da pesquisa manual, o aplicativo também pode utilizar a localização atual do usuário para fornecer informações meteorológicas precisas da região atual. É necessário realizar a liberação da permissão de acesso a localização manualmente, uma vez que o aplicativo não solicita ao usuário (OBS: Apresenta alguns BUGs).
     
 -   **Visualização dos Próximos Dias:** O aplicativo exibe uma visão geral do clima nos próximos dias. Os usuários podem percorrer os dias futuros para visualizar as previsões de temperatura, condições climáticas e outras informações relevantes para se prepararem adequadamente, basta clicar nos cards.
     
 -   **Compartilhamento:** Os usuários têm a opção de compartilhar as informações do clima com outras pessoas. Isso pode ser útil ao planejar atividades ao ar livre, compartilhar previsões com amigos ou enviar detalhes do clima para familiares que estejam viajando.
    
+## Baixe o apk aqui:
+"[Download](https://www.behance.net/gallery/149813621/Thunder-forecast-app)"(23,82MB)
+
+![QRCode_Fácil](https://github.com/kleber0a0m/ClimaCertoAndroid/assets/70644405/fbda0072-8b23-4c57-b5c1-85dbd429cd3a)
+
 
 ## Design e Ícones
 
