@@ -1,6 +1,7 @@
 package br.com.kleberalbinomoreira.clima;
 
 import android.Manifest;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
@@ -33,12 +34,34 @@ public class BuscaCidade extends AppCompatActivity {
     private Button btnBuscar;
     private TextView textView;
 
-    private Cidade cidadeSelecionada;
+    private Cidade cidadeSelecionada = new Cidade();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_busca_cidade);
+        sharedPreferences();
+
+    }
+
+    public void sharedPreferences() {
+        SharedPreferences sharedPreferences = getSharedPreferences("sharedPreferences", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        if (sharedPreferences.contains("cidadeId") && sharedPreferences.contains("cidadeNome") && sharedPreferences.contains("cidadeUf")) {
+            cidadeSelecionada.setUsarLocalizacao(false);
+            cidadeSelecionada.setId(sharedPreferences.getString("cidadeId", "0"));
+            cidadeSelecionada.setNome(sharedPreferences.getString("cidadeNome", "0"));
+            cidadeSelecionada.setUf(sharedPreferences.getString("cidadeUf", "0"));
+
+            Log.i("cidadeId", sharedPreferences.getString("cidadeId", "0"));
+            Log.i("cidadeNome", sharedPreferences.getString("cidadeNome", "0"));
+            Log.i("cidadeUf", sharedPreferences.getString("cidadeUf", "0"));
+
+            Intent intent = new Intent(BuscaCidade.this, PrevisaoTempo.class);
+            intent.putExtra("cidade", cidadeSelecionada);
+            startActivity(intent);
+        }
+
     }
 
     public void buscarCidade(View view) {
@@ -90,6 +113,12 @@ public class BuscaCidade extends AppCompatActivity {
             if (cidadeList.size() == 1) {
                 cidadeSelecionada = cidadeList.get(0);
                 cidadeSelecionada.setUsarLocalizacao(false);
+                SharedPreferences sharedPreferences = getSharedPreferences("sharedPreferences", MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("cidadeId", cidadeSelecionada.getId());
+                editor.putString("cidadeNome", cidadeSelecionada.getNome());
+                editor.putString("cidadeUf", cidadeSelecionada.getUf());
+                editor.commit();
 
                 Intent intent = new Intent(BuscaCidade.this, PrevisaoTempo.class);
                 intent.putExtra("cidade", cidadeSelecionada);
@@ -121,6 +150,15 @@ public class BuscaCidade extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 cidadeSelecionada = cidades.get(which);
+
+                cidadeSelecionada.setUsarLocalizacao(false);
+                SharedPreferences sharedPreferences = getSharedPreferences("sharedPreferences", MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("cidadeId", cidadeSelecionada.getId());
+                editor.putString("cidadeNome", cidadeSelecionada.getNome());
+                editor.putString("cidadeUf", cidadeSelecionada.getUf());
+                editor.commit();
+
                 Intent intent = new Intent(BuscaCidade.this, PrevisaoTempo.class);
                 intent.putExtra("cidade", cidadeSelecionada);
                 startActivity(intent);

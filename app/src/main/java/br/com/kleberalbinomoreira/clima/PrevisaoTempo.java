@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentResolver;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -330,6 +331,13 @@ public class PrevisaoTempo extends AppCompatActivity {
     }
 
     public void voltar(View view) {
+        cidadeSelecionada.setUsarLocalizacao(false);
+        SharedPreferences sharedPreferences = getSharedPreferences("sharedPreferences", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.remove("cidadeId");
+        editor.remove("cidadeNome");
+        editor.remove("cidadeUf");
+        editor.commit();
         Intent intent = new Intent(this, BuscaCidade.class);
         startActivity(intent);
     }
