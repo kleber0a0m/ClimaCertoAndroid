@@ -7,6 +7,18 @@
     android:background="#22262b"
     tools:context=".PrevisaoTempo">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:background="#303640"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/menu_main" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineHorizontal1"
         android:layout_width="wrap_content"
@@ -800,24 +812,25 @@
         android:id="@+id/lblCidade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:onClick="voltar"
         android:text="Cidade - UF"
         android:textColor="#FFFFFF"
         android:textColorHighlight="#FFFFFF"
         android:textColorHint="#FFFFFF"
         android:textColorLink="#FFFFFF"
         android:textSize="16sp"
-        android:onClick="voltar"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/toolbar" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="312dp"
         android:onClick="compartilhar"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/lblCidade"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/lblCidade"
@@ -825,13 +838,14 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="40dp"
-        android:layout_height="50dp"
+        android:layout_width="32dp"
+        android:layout_height="31dp"
         android:layout_marginStart="16dp"
         android:onClick="voltar"
         app:layout_constraintBottom_toBottomOf="@+id/lblCidade"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/lblCidade"
+        app:layout_constraintVertical_bias="0.678"
         app:srcCompat="@drawable/baseline_arrow_back_24" />
 
     <TextView

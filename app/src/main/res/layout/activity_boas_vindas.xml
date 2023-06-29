@@ -77,7 +77,7 @@
         app:layout_constraintGuide_percent="0.9" />
 
     <Button
-        android:id="@+id/btnBuscar"
+        android:id="@+id/btnVoltar"
         android:layout_width="194dp"
         android:layout_height="51dp"
         android:backgroundTint="#0076FF"

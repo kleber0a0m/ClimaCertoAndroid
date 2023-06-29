@@ -7,6 +7,7 @@
     android:background="#22262B"
     tools:context=".BuscaCidade" >
 
+
     <TextView
         android:id="@+id/txtProximosDias2"
         android:layout_width="295dp"
@@ -54,7 +55,7 @@
         app:layout_constraintGuide_percent="0.79" />
 
     <Button
-        android:id="@+id/btnBuscar"
+        android:id="@+id/btnVoltar"
         android:layout_width="194dp"
         android:layout_height="51dp"
         android:layout_marginTop="16dp"
@@ -111,6 +112,6 @@
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnBuscar" />
+        app:layout_constraintTop_toBottomOf="@+id/btnVoltar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

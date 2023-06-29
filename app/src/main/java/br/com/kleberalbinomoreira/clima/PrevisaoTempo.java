@@ -1,15 +1,20 @@
 package br.com.kleberalbinomoreira.clima;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -27,6 +32,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+import android.view.Menu;
+import android.view.MenuItem;
+
 public class PrevisaoTempo extends AppCompatActivity {
 
     private List<Previsao> previsoesList = new ArrayList<>();
@@ -38,6 +46,19 @@ public class PrevisaoTempo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_previsao_tempo);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        // Altere a cor dos três pontinhos para branco
+        Drawable drawable = toolbar.getOverflowIcon();
+        if (drawable != null) {
+            drawable.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP);
+        }
+
+        // Remova o título do aplicativo da Toolbar
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        
         Intent intent = getIntent();
         cidadeSelecionada = (Cidade) intent.getSerializableExtra("cidade");
 
@@ -53,6 +74,34 @@ public class PrevisaoTempo extends AppCompatActivity {
             lblCidade.setText(cidadeSelecionada.getNome() + " - " + cidadeSelecionada.getUf());
         }
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        // Verifique o ID do item do menu clicado e execute a ação correspondente
+        if (id == R.id.action_search) {
+            this.voltar(null);
+            return true;
+        } else if (id == R.id.action_app_details) {
+
+            Intent intent = new Intent(this, Informacoes.class);
+            startActivity(intent);
+            return true;
+        } else if (id == R.id.action_share) {
+            this.compartilhar(null);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
 
     public void buscarPrevisao() {
         EditText cidade = findViewById(R.id.editCidade);

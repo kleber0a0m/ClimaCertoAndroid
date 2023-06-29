@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#22262B"
+    tools:context=".BoasVindas" >
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHorizontal2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.11" />
+
+    <ImageView
+        android:id="@+id/imgTempo"
+        android:layout_width="111dp"
+        android:layout_height="114dp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontal2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidelineHorizontal2"
+        app:srcCompat="@drawable/sol_e_chuva" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHorizontal1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.26" />
+
+    <TextView
+        android:id="@+id/txtDia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_extrabold"
+        android:text="Clima Certo"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontal1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidelineHorizontal1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHorizontal4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="continuarTelaInicial"
+        android:orientation="horizontal"
+        android:scrollbarSize="34dp"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <ScrollView
+        android:layout_width="352dp"
+        android:layout_height="400dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDia">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Este é um aplicativo de clima desenvolvido para dispositivos Android. Ele permite que os usuários obtenham informações precisas sobre o clima de qualquer cidade do Brasil.    Funcionalidades Pesquisa de Cidades: Os usuários podem pesquisar por cidades específicas para obter informações detalhadas sobre o clima atual e previsões futuras. Basta digitar o nome da cidade desejada na barra de pesquisa e o aplicativo fornecerá os resultados correspondentes.    Utilização da Localização: Além da pesquisa manual, o aplicativo também pode utilizar a localização atual do usuário para fornecer informações meteorológicas precisas da região atual. É necessário realizar a liberação da permissão de acesso a localização manualmente, uma vez que o aplicativo não solicita ao usuário (OBS: Apresenta alguns BUGs).    Visualização dos Próximos Dias: O aplicativo exibe uma visão geral do clima nos próximos dias. Os usuários podem percorrer os dias futuros para visualizar as previsões de temperatura, condições climáticas e outras informações relevantes para se prepararem adequadamente, basta clicar nos cards.    Compartilhamento: Os usuários têm a opção de compartilhar as informações do clima com outras pessoas. Isso pode ser útil ao planejar atividades ao ar livre, compartilhar previsões com amigos ou enviar detalhes do clima para familiares que estejam viajando.   API do CPTEC/INPE Este aplicativo utiliza a API do Centro de Previsão de Tempo e Estudos Climáticos / Instituto Nacional de Pesquisas Espaciais para obter dados de clima e previsões. Agradecemos ao CPTEC/INPE por disponibilizar essa API valiosa que permite a obtenção de informações atualizadas sobre o clima de diferentes localidades.  Desenvolvido por: Kléber Albino Moreira"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
